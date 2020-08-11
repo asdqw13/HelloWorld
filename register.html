@@ -4,79 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 창</title>
-    <!-- <link href="./style/reg_style.css" rel="stylesheet"/> -->
+    <link href="./style/reg_style.css" rel="stylesheet"/>
 </head>
 <body>
-    <fieldset>
-        <legend>필수입력정보</legend>
-        <table border="1">
-            <caption>회원가입 필수 입력표</caption>
-            <tr>
-                <th><label for="user_id">아이디</label></th>
-                <td><input type="text" id="user_id" required><input type="button" value="중복확인"></td>
-            </tr>
-            <tr>
-                <th><label for="user_pw">비밀번호</label></th>
-                <td><input type="password" id="user_pw" required></td>
-            </tr>
-            <tr>
-                <th><label for="user_name">이름</label></th>
-                <td><input type="text" id="user_name" required></td>
-            </tr>
-            <tr>
-                <th><label for="user_tel">연락처</label></th>
-                <td><input type="tel" id="user_tel" required></td>
-            </tr>
-            <tr>
-                <th><label for="user_email">이메일</label></th>
-                <td><input type="email" id="user_email" required></td>
-            </tr>
-            <tr>
-                <th>전자우편신청</th>
-                <td>
-                    <input type="radio" name="mail" id="mail_yes"><label for="mail_yes">예, 신청합니다.</label>
-                    <input type="radio" name="mail" id="mail_no"><label for="mail_no">아니오, 신청하지 않습니다.</label>
-                </td>
-            </tr>
-        </table>
-    </fieldset>
+    <!--
+        form 태그에서 전달방식 2가지
+        method="get" : url에 전달되는 값이 보임, 간단한 문장 전송
+        method="post" : url에 전달되는 값이 안보임, 파일전송, 큰 용량 사용
 
-    <fieldset>
-        <legend>선택입력정보</legend>
-        <table border="1">
-            <caption>회원가입 선택입력 표</caption>
-            <tr>
-                <th><label for="user_id">프로필사진</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_pw">생년월일</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_name">성별</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_phone">취미</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_email">홈페이지</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_email">직업</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th><label for="user_email">좋아하는 색상</label></th>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <th>자기소개</th>
-            </tr>
-        </table>
-    </fieldset>
+        minlength=5, maxlength=10
+        required : 필수입력
+        checked : 기본체크
+        selected : option의 기본선택
+        autoforcus : 상단에 포커스 
+        placeholder : 주의 문구 입력(입력시 사라짐)
+    -->
+    <div id="join_wrap">
+        <form action="test2.html" method="get">
+            <fieldset>
+                <legend class="join_title">필수입력정보</legend>
+                <table class="join_table">
+                    <!-- <caption>회원가입 필수 입력표</caption> -->
+                    <tr>
+                        <th class="join_first"><label for="user_id">아이디</label></th>
+                        <td class="join_first"><input type="text" class="join_textform" id="user_id" required autofocus><input type="button" class="join_firstbtn" value="중복확인"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pw">비밀번호</label></th>
+                        <td><input type="password" class="join_textform" id="user_pw" required minlength="10" placeholder="10자이상의 영문과 숫자 조합"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_name">이름</label></th>
+                        <td><input type="text" class="join_textform" id="user_name" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_tel">연락처</label></th>
+                        <td><input type="tel" class="join_textform" id="user_tel" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_email">이메일</label></th>
+                        <td><input type="email" class="join_textform" id="user_email" required></td>
+                    </tr>
+                    <tr>
+                        <th>전자우편신청</th>
+                        <td>
+                            <input type="radio" name="mail" id="mail_yes" checked><label for="mail_yes">예, 신청합니다.</label>
+                            <input type="radio" name="mail" id="mail_no"><label for="mail_no">아니오, 신청하지 않습니다.</label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend class="join_title">선택입력정보</legend>
+                <table class="join_table">
+                    <!-- <caption>회원가입 선택입력 표</caption> -->
+                    <tr>
+                        <th class="join_first"><label for="user_photo">프로필사진</label></th>
+                        <td class="join_first"><input type="file" id="user_photo"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_birth">생년월일</label></th>
+                        <td><input type="date" class="join_textform" id="user_birth"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_gender">성별</label></th>
+                        <td>
+                            <input type="radio" name="gender" id="gender_male" checked><label for="gender_male">남</label>
+                            <input type="radio" name="gender" id="gender_female"><label for="gender_female">여</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_hobby">취미</label></th>
+                        <td>
+                            <input type="checkbox" name="hobby" id="hobby_1"><label for="hobby_1">등산</label>
+                            <input type="checkbox" name="hobby" id="hobby_2" checked><label for="hobby_2">독서</label>
+                            <input type="checkbox" name="hobby" id="hobby_3" checked><label for="hobby_3">음악감상</label>
+                            <input type="checkbox" name="hobby" id="hobby_4"><label for="hobby_4">영화감상</label>
+                            <input type="checkbox" name="hobby" id="hobby_5"><label for="hobby_5">요리</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_homepage">홈페이지</label></th>
+                        <td><input type="url" id="user_homepage" value="http://"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_job" class="join_textform">직업</label></th>
+                        <td>
+                            <select id="user_job" class="join_textform">
+                                <option selected>회사원</option>
+                                <option>연구원</option>
+                                <option>공무원</option>
+                                <option>학생</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_color">좋아하는 색상</label></th>
+                        <td><input type="color" id="user_color"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_intro">자기소개</label></th>
+                        <td><textarea class="join_textarea" id="user_intro" rows="10" cols="30"></textarea></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div class="join_btnarea">
+                <button type="reset">취소</button>
+                <button type="submit" class="join_lastbtn">회원가입</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

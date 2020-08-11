@@ -8,6 +8,112 @@
 
 body
 {
-    color: red;
-    background-color: blue;
+    font-family: "나눔고딕", sans-serif;
+    font-size: 16px;
+    color: #333333;
+}
+
+fieldset
+{
+    border: 0;
+}
+
+table
+{
+    border-collapse: collapse; /* 테두리사이 간격 없애기 */
+}
+
+/* caption
+{
+    position: absolute;
+    left: 100px;
+} */
+
+#join_wrap
+{
+    width: 800px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#join_wrap .join_title
+{
+    padding: 50px 0 20px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.join_table th, .join_table td
+{
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dddddd;
+}
+
+.join_table th
+{
+    width: 180px;
+    text-align: left;
+}
+
+.join_table td
+{
+    width: 620px;
+}
+
+.join_table .join_first
+{
+    border-top: 2px solid #333333;
+}
+
+.join_table .join_textform
+{
+    width: 420px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 0px 10px;
+    box-sizing: border-box; /* 박스의 테두리를 동일하게 조절 */
+}
+
+.join_table .join_firstbtn
+{
+    margin-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    width: 80px;
+    height: 40px;
+    background-color: #444444;
+    border: 0;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.join_table .join_textarea
+{
+    width: 420px;
+    height: 80px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.join_btnarea
+{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.join_btnarea button
+{
+    width: 200px;
+    height: 72px;
+    margin: 0 10px;
+    border: 0;
+    font-size: 20px;
+}
+.join_btnarea .join_lastbtn
+{
+    background-color: #444444;
+    color: #ffffff;
 }
